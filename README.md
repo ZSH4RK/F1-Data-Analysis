@@ -15,5 +15,5 @@ https://api.jolpi.ca/ergast/
 ### Telemetry
 https://docs.fastf1.dev
 ### Weather Data
-meteostat.net/en/
+https://meteostat.net/en/
 
