@@ -13,7 +13,7 @@ https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main
 ### Historic Data
 https://api.jolpi.ca/ergast/
 ### Telemetry
-https://docs.fastf1.dev
+https://docs.fastf1.dev -> Gives Free Practice and Qualifying data aswell as speed through at the lap
 ### Weather Data
 https://meteostat.net/en/
 
