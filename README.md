@@ -6,10 +6,14 @@ https://www.datacamp.com/tutorial/k-fold-cross-validation
 https://www.geeksforgeeks.org/machine-learning/understanding-feature-importance-in-logistic-regression-models/
 
 ## Reference Models
-#### Test
-##### Test
+
 https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main
 
-# Data Used
+## Data Used
+### Historic Data
 https://api.jolpi.ca/ergast/
+### Telemetry
 https://docs.fastf1.dev
+### Weather Data
+meteostat.net/en/
+
