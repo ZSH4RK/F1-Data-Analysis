@@ -17,7 +17,7 @@ https://www.bigdataf1.com
 https://api.jolpi.ca/ergast/
 
 ### Telemetry
-https://docs.fastf1.dev -> Gives Free Practice and Qualifying data aswell as speed through at the lap
+https://docs.fastf1.dev -> Gives Free Practice and Qualifying data as well as speed through at the lap
 
 ### Weather Data
 https://meteostat.net/en/
