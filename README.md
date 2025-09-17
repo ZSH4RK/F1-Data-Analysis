@@ -10,6 +10,8 @@ I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoo
 
 ### Reference Models
 [yngjoel, Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main)
+[mar-antaya Qualifying Prediction](https://github.com/mar-antaya/2025_f1_predictions)
+[Quadrop 
 
 ### Reference Analysis
 [F1 Data Analysis](https://x.com/fdataanalysis?lang=en)
