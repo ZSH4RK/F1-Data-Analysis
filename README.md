@@ -1,24 +1,27 @@
-# F1-Data-Analysis
+# F1 Data Analysis
+In this project, I want to create a model that predicts qualifying result and hopefully will be able to predict the top 3-5 in the future and create a model that based on the Qualifying prediction makes a model that predicts the race winner or where the polesitter will finish.
 ## Learning
 ### Feature Importance and Logistic Regression
-https://campus.datacamp.com/courses/model-validation-in-python/cross-validation?ex=4 <br>
-https://www.datacamp.com/tutorial/k-fold-cross-validation <br>
-https://www.geeksforgeeks.org/machine-learning/understanding-feature-importance-in-logistic-regression-models/
+[DataCamp-Model Validation](https://campus.datacamp.com/courses/model-validation-in-python/cross-validation?ex=4) <br>
+[DataCamp-K Fold Cross Validation](https://www.datacamp.com/tutorial/k-fold-cross-validation) <br>
+[GeeksForGeeks](https://www.geeksforgeeks.org/machine-learning/understanding-feature-importance-in-logistic-regression-models/)
 
-## Reference Models
-https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main
+I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoodward?view=true) on Python, SQL and Machine Learning Theory in order to prepare for this project
 
-## Reference Analysis
-https://x.com/fdataanalysis?lang=en
-https://www.bigdataf1.com
+### Reference Models
+[yngjoel, Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main)
+
+### Reference Analysis
+[F1 Data Analysis](https://x.com/fdataanalysis?lang=en)
+[Big Data F1](https://www.bigdataf1.com)
 
 ## Data Used
 ### Historic Data
-https://api.jolpi.ca/ergast/
+[Ergast](https://api.jolpi.ca/ergast/)
 
 ### Telemetry
-https://docs.fastf1.dev -> Gives Free Practice and Qualifying data as well as speed through at the lap
+[FastF1](https://docs.fastf1.dev) gives Free Practice and Qualifying data as well as speed through at the lap
 
 ### Weather Data
-https://meteostat.net/en/
+[Meteostat](https://meteostat.net/en/) gives weather data such as rain and wind speed during the races
 
