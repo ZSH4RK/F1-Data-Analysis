@@ -9,7 +9,7 @@ In this project, I want to create a model that predicts qualifying result and ho
 I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoodward?view=true) on Python, SQL and Machine Learning Theory in order to prepare for this project
 
 ### Reference Models
-[yngjoel, Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main) <br>
+[yngjoel, Australian Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main) <br>
 [mar-antaya Qualifying Prediction](https://github.com/mar-antaya/2025_f1_predictions)
 
 
