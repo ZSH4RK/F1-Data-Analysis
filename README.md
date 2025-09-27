@@ -27,3 +27,7 @@ I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoo
 ### Weather Data
 [Meteostat](https://meteostat.net/en/) gives weather data such as rain and wind speed during the races
 
+### Ideas
+[Ensemble Learning](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning) - Combining the results from multiple models in a Classifier, ie. Voting Classifier <br>
+<br>
+<img width="800" height="401" alt="image" src="https://github.com/user-attachments/assets/c5e426c2-1c6d-4101-b46f-bc745f2d04f1" />
