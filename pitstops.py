@@ -93,7 +93,7 @@ silverstone = {
 }
 
 #tsunodas 10.6 seconds pitstop has been ommited
-Red_Bull_Ring = {
+red_bull_ring = {
     'circuit': ['Red Bull Ring']*31,
     'pit_lane_length': [359]*31,
     "team": ["MCL", "RB", "FER", "RB", "ALP", "FER", "KICK", "KICK", "KICK", "FER", "VCARB", "MERC", "KICK", "FER", "MCL", "WIL", "AM", "RB", "ALP", "AM", "ALP", "MERC", "HAAS", "HAAS", "MCL", "HAAS", "MCL", "AM", "ALP", "HAAS", "VCARB"],
@@ -254,14 +254,14 @@ albert_park = {
 
 
 
-pitstops = {key: albert_park[key] + shanghai[key]+ suzuka[key] + bahrain[key] + jeddah[key] + miami[key] + imola[key] + monaco[key] + barcelona[key] + canada[key] + Red_Bull_Ring[key]+ silverstone[key] + spa[key] + hungary[key] + zandvoort[key] + monza[key]  + baku[key] for key in baku.keys()}
+pitstops = {key: albert_park[key] + shanghai[key]+ suzuka[key] + bahrain[key] + jeddah[key] + miami[key] + imola[key] + monaco[key] + barcelona[key] + canada[key] + red_bull_ring[key]+ silverstone[key] + spa[key] + hungary[key] + zandvoort[key] + monza[key]  + baku[key] for key in baku.keys()}
 for key in baku.keys():
     print(key, len(pitstops[key]))
 
 circuits = {
     "bahrain": bahrain, "jeddah": jeddah, "miami": miami, "imola": imola,
     "monaco": monaco, "barcelona": barcelona, "canada": canada,
-    "Red Bull Ring": Red_Bull_Ring, "silverstone": silverstone, "spa": spa,
+    "Red Bull Ring": red_bull_ring, "silverstone": silverstone, "spa": spa,
     "hungary": hungary, "zandvoort": zandvoort, "monza": monza, "baku": baku
 }
 
