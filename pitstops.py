@@ -298,10 +298,10 @@ print('min', team_min)
 print('std', team_std)
 
 print(f'Correlation: {corr}')
-plt.figure(figsize=(8,6))
-sns.lineplot(data=pitstops_df, x='circuit', y='duration', hue='team', palette=palette, marker="o", ci=None)
+plt.figure(figsize=(20, 10))
+sns.lineplot(data=pitstops_df, x='circuit', y='duration', hue='team', palette=palette, marker="o", ci=None, )
 plt.title("Pit Stop Durations by Circuit")
 
-
+plt.figure(figsize=(40, 40))
 sns.displot(data=pitstops_df, x='duration', binwidth=0.5, hue='team', palette=palette, multiple = 'stack')
 plt.show()
