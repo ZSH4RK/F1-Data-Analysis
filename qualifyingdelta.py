@@ -283,18 +283,18 @@ baku_results_df['FP1_TIME/GAP'] = baku_results_df['FP1_TIME/GAP'].astype('float'
 baku_results_df['FP2_TIME/GAP'] = baku_results_df['FP2_TIME/GAP'].astype('float')
 baku_results_df['FP3_TIME/GAP'] = baku_results_df['FP3_TIME/GAP'].astype('float')
 
-singapore_fp1_df = pd.DataFrame(singapore_fp1)
-singapore_fp2_df = pd.DataFrame(singapore_fp2)
-singapore_fp3_df = pd.DataFrame(singapore_fp3)
+# singapore_fp1_df = pd.DataFrame(singapore_fp1)
+# singapore_fp2_df = pd.DataFrame(singapore_fp2)
+# singapore_fp3_df = pd.DataFrame(singapore_fp3)
 
-singapore_results_df = pd.merge(singapore_fp1_df, singapore_fp2_df, on=['TEAM', 'DRIVER', 'NO'])
-singapore_results_df = pd.merge(singapore_results_df, singapore_fp3_df, on = ['TEAM', 'DRIVER', 'NO'])
-#singapore_results_df = pd.merge(results_df, quali_df, on= ['TEAM', 'DRIVER', 'NO'])
+# singapore_results_df = pd.merge(singapore_fp1_df, singapore_fp2_df, on=['TEAM', 'DRIVER', 'NO'])
+# singapore_results_df = pd.merge(singapore_results_df, singapore_fp3_df, on = ['TEAM', 'DRIVER', 'NO'])
+# #singapore_results_df = pd.merge(results_df, quali_df, on= ['TEAM', 'DRIVER', 'NO'])
 
-#Data Manipulation
-singapore_results_df['FP1_TIME/GAP'] = singapore_results_df['FP1_TIME/GAP'].astype('float')
-singapore_results_df['FP2_TIME/GAP'] = singapore_results_df['FP2_TIME/GAP'].astype('float')
-singapore_results_df['FP3_TIME/GAP'] = singapore_results_df['FP3_TIME/GAP'].astype('float')
+# #Data Manipulation
+# singapore_results_df['FP1_TIME/GAP'] = singapore_results_df['FP1_TIME/GAP'].astype('float')
+# singapore_results_df['FP2_TIME/GAP'] = singapore_results_df['FP2_TIME/GAP'].astype('float')
+# singapore_results_df['FP3_TIME/GAP'] = singapore_results_df['FP3_TIME/GAP'].astype('float')
 
 results_df = baku_results_df #.append(singapore_results_df)
 #:Linear Regression Model
@@ -309,12 +309,9 @@ lr = LinearRegression()
 
 lr.fit(X_train, y_train)
 y_pred = lr.predict(X_test)
-r2 = MSE(y_test, y_pred)
-print(f'mse score: {r2}')
+r2 = r2_score(y_test, y_pred)
+print(f'r2 score: {r2}')
 
-for i in range(0, 20):
-  pred = lr.predict(X_test[i])
-  print(pred)
 
 
 #Exploritary Data Analysis
@@ -322,40 +319,40 @@ corr = results_df['FP1_TIME/GAP'].corr(results_df['FP1_LAPS'])
 
 print(f'correlation: {corr}')
 
-# palette = {
-#     'McLaren': '#FF8000',   # bright orange
-#     'Ferrari': '#FF1A1A',   # bright red
-#     'Mercedes': '#00CED1',  # bright cyan
-#     'Red Bull Racing': '#00008B',    # dark blue
-#     'Williams': '#0072B2',   # colorblind blue
-#     'Aston Martin': '#006400',    # dark green
-#     'Kick Sauber':'#90EE90',   # light green
-#     'Racing Bulls': '#FFD700', # bright yellow
-#     'Haas': '#555555',  # deep grey
-#     'Alpine': '#FF69B4'    # bright pink
-# }
+palette = {
+    'McLaren': '#FF8000',   # bright orange
+    'Ferrari': '#FF1A1A',   # bright red
+    'Mercedes': '#00CED1',  # bright cyan
+    'Red Bull Racing': '#00008B',    # dark blue
+    'Williams': '#0072B2',   # colorblind blue
+    'Aston Martin': '#006400',    # dark green
+    'Kick Sauber':'#90EE90',   # light green
+    'Racing Bulls': '#FFD700', # bright yellow
+    'Haas': '#555555',  # deep grey
+    'Alpine': '#FF69B4'    # bright pink
+}
 
 
-# plt.figure(figsize=(10, 6))
-# #sns.scatterplot(
-# #     x='FP1_TIME/GAP',
-# #     y='FP1_LAPS',
-# #     data=results_df,
-# #     hue='TEAM',              # Color points by TEAM
-# #     palette=palette,         # Choose a color palette
-# #     s=100                    # Increase point size for clarity
-# # )
+plt.figure(figsize=(10, 6))
+sns.scatterplot(
+    x='FP1_TIME/GAP',
+    y='FP1_LAPS',
+    data=results_df,
+    hue='TEAM',              # Color points by TEAM
+    palette=palette,         # Choose a color palette
+    s=100                    # Increase point size for clarity
+)
 
-# # Optionally add regression line (without hue)
-# #sns.regplot(
-# #     x='FP1_TIME/GAP',
-# #     y='FP1_LAPS',
-# #     data=results_df,
-# #     scatter=False,           # Only show the line
-# #     color='black'            # Line color
-# # )
 
-# plt.title('Laps vs Time Gap by Team')
-# plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')  # Move legend outside plot
-# plt.tight_layout()
-# plt.show()
+sns.regplot(
+    x='FP1_TIME/GAP',
+    y='FP1_LAPS',
+    data=results_df,
+    scatter=False,           # Only show the line
+    color='black'            # Line color
+)
+
+plt.title('Laps vs Time Gap by Team')
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')  # Move legend outside plot
+plt.tight_layout()
+plt.show()
