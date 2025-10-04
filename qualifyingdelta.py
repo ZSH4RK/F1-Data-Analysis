@@ -11,108 +11,112 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_squared_error as MSE
 #singapore
-singapore_fp1 = {
+italy_fp1 = {
     "FP1_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+                11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     
-    "NO": [14, 16, 1, 44, 81, 4, 6, 55, 22, 31,
-           63, 27, 10, 12, 30, 87, 5, 18, 43, 23],
+    "NO": [44, 16, 55, 1, 12, 4, 23, 63, 14, 6,
+           5, 27, 30, 22, 18, 89, 31, 10, 87, 61],
     
     "DRIVER": [
-        "Fernando Alonso", "Charles Leclerc", "Max Verstappen", "Lewis Hamilton", "Oscar Piastri",
-        "Lando Norris", "Isack Hadjar", "Carlos Sainz", "Yuki Tsunoda", "Esteban Ocon",
-        "George Russell", "Nico Hulkenberg", "Pierre Gasly", "Kimi Antonelli", "Liam Lawson",
-        "Oliver Bearman", "Gabriel Bortoleto", "Lance Stroll", "Franco Colapinto", "Alexander Albon"
+        "Lewis Hamilton", "Charles Leclerc", "Carlos Sainz", "Max Verstappen", "Kimi Antonelli",
+        "Lando Norris", "Alexander Albon", "George Russell", "Fernando Alonso", "Isack Hadjar",
+        "Gabriel Bortoleto", "Nico Hulkenberg", "Liam Lawson", "Yuki Tsunoda", "Lance Stroll",
+        "Alexander Dunne", "Esteban Ocon", "Pierre Gasly", "Oliver Bearman", "Paul Aron"
     ],
     
     "TEAM": [
-        "Aston Martin", "Ferrari", "Red Bull Racing", "Ferrari", "McLaren",
-        "McLaren", "Racing Bulls", "Williams", "Red Bull Racing", "Haas",
-        "Mercedes", "Kick Sauber", "Alpine", "Mercedes", "Racing Bulls",
-        "Haas", "Kick Sauber", "Aston Martin", "Alpine", "Williams"
+        "Ferrari", "Ferrari", "Williams", "Red Bull Racing", "Mercedes",
+        "McLaren", "Williams", "Mercedes", "Aston Martin", "Racing Bulls",
+        "Kick Sauber", "Kick Sauber", "Racing Bulls", "Red Bull Racing", "Aston Martin",
+        "McLaren", "Haas", "Alpine", "Haas", "Alpine"
     ],
     
     "FP1_TIME/GAP": [
-        "0", "0.150", "0.27", "0.364", "0.365",
-        "0.582", "0.639", "0.696", "0.744", "1.012",
-        "1.023", "1.199", "1.262", "1.283", "1.345",
-        "1.422", "1.495", "1.918", "2.208", "2"
-    ],
+    0.0, 0.169, 0.533, 0.575, 0.823,
+    0.904, 0.956, 0.993, 0.997, 1.041,
+    1.055, 1.062, 1.084, 1.175, 1.178,
+    1.489, 1.525, 1.536, 1.941, 2.036
+]
+,
     
     "FP1_LAPS": [
-        23, 25, 24, 23, 25,
-        22, 28, 27, 25, 24,
-        22, 29, 26, 24, 27,
-        25, 27, 18, 26, None
+        20, 24, 25, 22, 25,
+        28, 25, 20, 20, 25,
+        24, 26, 27, 24, 26,
+        26, 22, 26, 23, 23
     ]
 }
 
-singapore_fp2 = {
-    "FP2_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-    
-    "NO": [81, 6, 1, 14, 4, 18, 31, 55, 16, 44,
-           22, 87, 23, 27, 5, 10, 30, 12, 43, 63],
-    
+italy_fp2 = {
+    "FP2_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "NO": [4, 16, 55, 81, 44, 1, 23, 27, 22, 63, 6, 5, 18, 87, 14, 31, 30, 10, 12, 43],
     "DRIVER": [
-        "Oscar Piastri", "Isack Hadjar", "Max Verstappen", "Fernando Alonso", "Lando Norris",
-        "Lance Stroll", "Esteban Ocon", "Carlos Sainz", "Charles Leclerc", "Lewis Hamilton",
-        "Yuki Tsunoda", "Oliver Bearman", "Alexander Albon", "Nico Hulkenberg", "Gabriel Bortoleto",
-        "Pierre Gasly", "Liam Lawson", "Kimi Antonelli", "Franco Colapinto", "George Russell"
+        "Lando Norris", "Charles Leclerc", "Carlos Sainz", "Oscar Piastri", "Lewis Hamilton",
+        "Max Verstappen", "Alexander Albon", "Nico Hulkenberg", "Yuki Tsunoda", "George Russell",
+        "Isack Hadjar", "Gabriel Bortoleto", "Lance Stroll", "Oliver Bearman", "Fernando Alonso",
+        "Esteban Ocon", "Liam Lawson", "Pierre Gasly", "Kimi Antonelli", "Franco Colapinto"
     ],
-    
     "TEAM": [
-        "McLaren", "Racing Bulls", "Red Bull Racing", "Aston Martin", "McLaren",
-        "Aston Martin", "Haas", "Williams", "Ferrari", "Ferrari",
-        "Red Bull Racing", "Haas", "Williams", "Kick Sauber", "Kick Sauber",
-        "Alpine", "Racing Bulls", "Mercedes", "Alpine", "Mercedes"
+        "McLaren", "Ferrari", "Williams", "McLaren", "Ferrari", "Red Bull Racing", "Williams",
+        "Kick Sauber", "Red Bull Racing", "Mercedes", "Racing Bulls", "Kick Sauber", "Aston Martin",
+        "Haas", "Aston Martin", "Haas", "Racing Bulls", "Alpine", "Mercedes", "Alpine"
     ],
-    
     "FP2_TIME/GAP": [
-        "0", "0.132", "0.143", "0.163", "0.483",
-        "0.508", "0.584", "0.585", "0.752", "0.777",
-        "0.994", "0.997", "1.346", "1.355", "1.605",
-        "1.744", "1.931", "2.005", "2.425", "2.517"
+        0, 0.083, 0.096, 0.181, 0.192, 0.199, 0.301, 0.363, 0.391, 0.398,
+        0.505, 0.597, 0.650, 0.729, 0.767, 0.776, 0.933, 1.224, 1.489, 1.686
     ],
-    
-    "FP2_LAPS": [
-        19, 19, 19, 19, 18,
-        18, 19, 20, 18, 17,
-        18, 18, 19, 19, 19,
-        20, 10, 18, 20, 6
+    "FP2_LAPS": [28, 29, 30, 29, 26, 27, 28, 27, 28, 29, 24, 25, 28, 29, 26, 29, 25, 30, 4, 30]
+}
+
+italy_fp3 = {
+    "FP3_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "NO": [4, 16, 81, 1, 63, 5, 44, 6, 12, 23, 27, 14, 55, 43, 22, 30, 87, 10, 18, 31],
+    "DRIVER": [
+        "Lando Norris", "Charles Leclerc", "Oscar Piastri", "Max Verstappen", "George Russell",
+        "Gabriel Bortoleto", "Lewis Hamilton", "Isack Hadjar", "Kimi Antonelli", "Alexander Albon",
+        "Nico Hulkenberg", "Fernando Alonso", "Carlos Sainz", "Franco Colapinto", "Yuki Tsunoda",
+        "Liam Lawson", "Oliver Bearman", "Pierre Gasly", "Lance Stroll", "Esteban Ocon"
+    ],
+    "TEAM": [
+        "McLaren", "Ferrari", "McLaren", "Red Bull Racing", "Mercedes",
+        "Kick Sauber", "Ferrari", "Racing Bulls", "Mercedes", "Williams",
+        "Kick Sauber", "Aston Martin", "Williams", "Alpine", "Red Bull Racing",
+        "Racing Bulls", "Haas", "Alpine", "Aston Martin", "Haas"
+    ],
+    "FP3_TIME/GAP": [
+        0, 0.021, 0.165, 0.167, 0.184, 0.227, 0.267, 0.272, 0.365, 0.389,
+        0.406, 0.530, 0.576, 0.703, 0.728, 0.801, 0.878, 0.916, 0.916, 0.973
+    ],
+    "FP3_LAPS": [21, 24, 22, 18, 19, 18, 23, 20, 24, 23, 18, 19, 23, 22, 24, 14, 22, 23, 22, 20]
+}
+
+italy_quali = {
+    "Quali_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "NO": [1, 4, 81, 16, 44, 63, 12, 5, 14, 22, 87, 27, 55, 23, 31, 6, 18, 43, 10, 30],
+    "DRIVER": [
+        "Max Verstappen", "Lando Norris", "Oscar Piastri", "Charles Leclerc", "Lewis Hamilton",
+        "George Russell", "Kimi Antonelli", "Gabriel Bortoleto", "Fernando Alonso", "Yuki Tsunoda",
+        "Oliver Bearman", "Nico Hulkenberg", "Carlos Sainz", "Alexander Albon", "Esteban Ocon",
+        "Isack Hadjar", "Lance Stroll", "Franco Colapinto", "Pierre Gasly", "Liam Lawson"
+    ],
+    "TEAM": [
+        "Red Bull Racing", "McLaren", "McLaren", "Ferrari", "Ferrari",
+        "Mercedes", "Mercedes", "Kick Sauber", "Aston Martin", "Red Bull Racing",
+        "Haas", "Kick Sauber", "Williams", "Williams", "Haas",
+        "Racing Bulls", "Aston Martin", "Alpine", "Alpine", "Racing Bulls"
+    ],
+    ],
+    "Quali Time": [
+        0.000, 0.077, 0.190, 0.215, 0.332,
+        0.365, 0.408, 0.598, 0.632, 0.727,
+        0.654, 0.706, 0.736, 0.791, 0.915,
+        1.125, 1.156, 1.200, 1.311, 1.487
     ]
 }
 
-singapore_fp3  = {
-    "FP3_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-    
-    "NO": [1, 81, 63, 12, 4, 55, 6, 44, 27, 16,
-            23, 5, 31, 87, 14, 43, 18, 22, 10, 30],
-    
-    "DRIVER": [
-        "Max Verstappen", "Oscar Piastri", "George Russell", "Kimi Antonelli", "Lando Norris",
-        "Carlos Sainz", "Isack Hadjar", "Lewis Hamilton", "Nico Hulkenberg", "Charles Leclerc",
-        "Alexander Albon", "Gabriel Bortoleto", "Esteban Ocon", "Oliver Bearman", "Fernando Alonso",
-        "Franco Colapinto", "Lance Stroll", "Yuki Tsunoda", "Pierre Gasly", "Liam Lawson"
-    ],
-    
-    "TEAM": [
-        "Red Bull Racing", "McLaren", "Mercedes", "Mercedes", "McLaren",
-        "Williams", "Racing Bulls", "Ferrari", "Kick Sauber", "Ferrari",
-        "Williams", "Kick Sauber", "Haas", "Haas", "Aston Martin",
-        "Alpine", "Aston Martin", "Red Bull Racing", "Alpine", "Racing Bulls"
-    ],
-    
-    "FP3_TIME/GAP": [0.0, 0.017, 0.049, 0.089, 0.089, 0.244, 0.341, 0.411, 0.489, 0.503,
- 0.52, 0.549, 0.636, 0.651, 0.775, 0.899, 1.112, 1.292, 1.495, 3.48],
-    
-    "FP3_LAPS": [15, 25, 17, 18, 25, 22, 24, 22, 22, 22,
-             23, 24, 23, 24, 21, 22, 23, 24, 22, 7]
-}
 
-
-baku_fp1  = {
+baku_fp1 = {
     "FP1_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
             11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
     
@@ -220,7 +224,7 @@ baku_fp3 = {
     ]
 }
 
-baku_quali  = {
+baku_quali = {
     "Quali_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
             11, 12, 13, 14, 15, 16, 17, 18, 19],
     "NO": [1, 55, 30, 12, 63, 22, 4, 6, 81, 16, 14, 44, 5, 18, 87, 43, 27, 10, 23],
@@ -262,42 +266,119 @@ baku_quali  = {
     ]
 }
 
+singapore_fp1 = {
+    "FP1_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    
+    "NO": [14, 16, 1, 44, 81, 4, 6, 55, 22, 31,
+           63, 27, 10, 12, 30, 87, 5, 18, 43, 23],
+    
+    "DRIVER": [
+        "Fernando Alonso", "Charles Leclerc", "Max Verstappen", "Lewis Hamilton", "Oscar Piastri",
+        "Lando Norris", "Isack Hadjar", "Carlos Sainz", "Yuki Tsunoda", "Esteban Ocon",
+        "George Russell", "Nico Hulkenberg", "Pierre Gasly", "Kimi Antonelli", "Liam Lawson",
+        "Oliver Bearman", "Gabriel Bortoleto", "Lance Stroll", "Franco Colapinto", "Alexander Albon"
+    ],
+    
+    "TEAM": [
+        "Aston Martin", "Ferrari", "Red Bull Racing", "Ferrari", "McLaren",
+        "McLaren", "Racing Bulls", "Williams", "Red Bull Racing", "Haas",
+        "Mercedes", "Kick Sauber", "Alpine", "Mercedes", "Racing Bulls",
+        "Haas", "Kick Sauber", "Aston Martin", "Alpine", "Williams"
+    ],
+    
+    "FP1_TIME/GAP": [
+    0.0, 0.150, 0.27, 0.364, 0.365,
+    0.582, 0.639, 0.696, 0.744, 1.012,
+    1.023, 1.199, 1.262, 1.283, 1.345,
+    1.422, 1.495, 1.918, 2.208, 2.0
+]
+,
+    
+    "FP1_LAPS": [
+        23, 25, 24, 23, 25,
+        22, 28, 27, 25, 24,
+        22, 29, 26, 24, 27,
+        25, 27, 18, 26, None
+    ]
+}
+
+singapore_fp2 = {
+    "FP2_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    
+    "NO": [81, 6, 1, 14, 4, 18, 31, 55, 16, 44,
+           22, 87, 23, 27, 5, 10, 30, 12, 43, 63],
+    
+    "DRIVER": [
+        "Oscar Piastri", "Isack Hadjar", "Max Verstappen", "Fernando Alonso", "Lando Norris",
+        "Lance Stroll", "Esteban Ocon", "Carlos Sainz", "Charles Leclerc", "Lewis Hamilton",
+        "Yuki Tsunoda", "Oliver Bearman", "Alexander Albon", "Nico Hulkenberg", "Gabriel Bortoleto",
+        "Pierre Gasly", "Liam Lawson", "Kimi Antonelli", "Franco Colapinto", "George Russell"
+    ],
+    
+    "TEAM": [
+        "McLaren", "Racing Bulls", "Red Bull Racing", "Aston Martin", "McLaren",
+        "Aston Martin", "Haas", "Williams", "Ferrari", "Ferrari",
+        "Red Bull Racing", "Haas", "Williams", "Kick Sauber", "Kick Sauber",
+        "Alpine", "Racing Bulls", "Mercedes", "Alpine", "Mercedes"
+    ],
+    
+    "FP2_TIME/GAP": [
+    0.0, 0.132, 0.143, 0.163, 0.483,
+    0.508, 0.584, 0.585, 0.752, 0.777,
+    0.994, 0.997, 1.346, 1.355, 1.605,
+    1.744, 1.931, 2.005, 2.425, 2.517
+]
+,
+    
+    "FP2_LAPS": [
+        19, 19, 19, 19, 18,
+        18, 19, 20, 18, 17,
+        18, 18, 19, 19, 19,
+        20, 10, 18, 20, 6
+    ]
+}
+
+singapore_fp3 = {
+    "FP3_POS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    
+    "NO": [1, 81, 63, 12, 4, 55, 6, 44, 27, 16,
+            23, 5, 31, 87, 14, 43, 18, 22, 10, 30],
+    
+    "DRIVER": [
+        "Max Verstappen", "Oscar Piastri", "George Russell", "Kimi Antonelli", "Lando Norris",
+        "Carlos Sainz", "Isack Hadjar", "Lewis Hamilton", "Nico Hulkenberg", "Charles Leclerc",
+        "Alexander Albon", "Gabriel Bortoleto", "Esteban Ocon", "Oliver Bearman", "Fernando Alonso",
+        "Franco Colapinto", "Lance Stroll", "Yuki Tsunoda", "Pierre Gasly", "Liam Lawson"
+    ],
+    
+    "TEAM": [
+        "Red Bull Racing", "McLaren", "Mercedes", "Mercedes", "McLaren",
+        "Williams", "Racing Bulls", "Ferrari", "Kick Sauber", "Ferrari",
+        "Williams", "Kick Sauber", "Haas", "Haas", "Aston Martin",
+        "Alpine", "Aston Martin", "Red Bull Racing", "Alpine", "Racing Bulls"
+    ],
+    
+    "FP3_TIME/GAP": [0.0, 0.017, 0.049, 0.089, 0.089, 0.244, 0.341, 0.411, 0.489, 0.503,
+ 0.52, 0.549, 0.636, 0.651, 0.775, 0.899, 1.112, 1.292, 1.495, 3.48],
+    
+    "FP3_LAPS": [15, 25, 17, 18, 25, 22, 24, 22, 22, 22,
+             23, 24, 23, 24, 21, 22, 23, 24, 22, 7]
+}
 
 
-#results = {key: baku_fp1[key]+ baku_fp2[key] + baku_fp3[key]  for key in baku_fp1.keys()}
-#results_df = pd.DataFrame(results)
-baku_quali_df = pd.DataFrame(baku_quali)
-#results_df = pd.merge(results_df, quali_df, on=['NO', 'DRIVER', 'TEAM'])
 
 
-baku_fp1_df = pd.DataFrame(baku_fp1)
-baku_fp2_df = pd.DataFrame(baku_fp2)
-baku_fp3_df = pd.DataFrame(baku_fp3)
 
-baku_results_df = pd.merge(baku_fp1_df, baku_fp2_df, on=['TEAM', 'DRIVER', 'NO'])
-baku_results_df = pd.merge(baku_results_df, baku_fp3_df, on = ['TEAM', 'DRIVER', 'NO'])
-baku_results_df = pd.merge(baku_results_df, baku_quali_df, on= ['TEAM', 'DRIVER', 'NO'])
 
-#Data Manipulation
-baku_results_df['FP1_TIME/GAP'] = baku_results_df['FP1_TIME/GAP'].astype('float')
-baku_results_df['FP2_TIME/GAP'] = baku_results_df['FP2_TIME/GAP'].astype('float')
-baku_results_df['FP3_TIME/GAP'] = baku_results_df['FP3_TIME/GAP'].astype('float')
+fp1 = {key: italy_fp1[key] + baku_fp1[key] for key in italy_fp1.keys()}
+fp2 = {key: italy_fp2[key] + baku_fp2[key] for key in italy_fp2.keys()}
+fp3 = {key: italy_fp3[key] + baku_fp3[key] for key in italy_fp3.keys()}
+quali = {key: italy_quali[key] + baku_quali[key] for key in italy_quali.keys()}
+ 
 
-# singapore_fp1_df = pd.DataFrame(singapore_fp1)
-# singapore_fp2_df = pd.DataFrame(singapore_fp2)
-# singapore_fp3_df = pd.DataFrame(singapore_fp3)
-
-# singapore_results_df = pd.merge(singapore_fp1_df, singapore_fp2_df, on=['TEAM', 'DRIVER', 'NO'])
-# singapore_results_df = pd.merge(singapore_results_df, singapore_fp3_df, on = ['TEAM', 'DRIVER', 'NO'])
-# #singapore_results_df = pd.merge(results_df, quali_df, on= ['TEAM', 'DRIVER', 'NO'])
-
-# #Data Manipulation
-# singapore_results_df['FP1_TIME/GAP'] = singapore_results_df['FP1_TIME/GAP'].astype('float')
-# singapore_results_df['FP2_TIME/GAP'] = singapore_results_df['FP2_TIME/GAP'].astype('float')
-# singapore_results_df['FP3_TIME/GAP'] = singapore_results_df['FP3_TIME/GAP'].astype('float')
-
-results_df = baku_results_df #.append(singapore_results_df)
-#:Linear Regression Model
 
 X = results_df[['FP1_LAPS', 'FP1_TIME/GAP', 'FP2_LAPS', 'FP2_TIME/GAP', 'FP3_LAPS', 'FP3_TIME/GAP']]
 y = results_df['Quali Time']
