@@ -37,6 +37,8 @@ I used the FP3 and FP2 Deltas as they are the most recent points of data from th
 #### Previous Quali Delta & Previous 5 Qualifying Delta
 I have used both the previous race's qualifying data aswell as the mean from the last 5 races. This is because i want to give more emphasis to recent qualifying performances over ones more races further in the past while still nullifying outlier performances in the last race. 
 
+#### Team Data
+I have used the team data to help neutralize the effects of crashes in FP3 which would remove data or have unrepresentitave data from sessions by averageing both drivers in a team
 ### Ideas
 [Ensemble Learning](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning) - Combining the results from multiple models in a Classifier, ie. Voting Classifier <br>
 <br>
