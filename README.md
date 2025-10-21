@@ -11,8 +11,7 @@ I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoo
 ### Reference Models
 [yngjoel, Australian Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main) <br>
 [mar-antaya Qualifying Prediction](https://github.com/mar-antaya/2025_f1_predictions)
-
-
+[SaiUbc Qualifying time](https://medium.com/@SaiUbc/whos-fastest-predicting-f1-qualifying-lap-times-with-machine-learning-ebf42d473115)
 ### Reference Analysis
 [F1 Data Analysis](https://x.com/fdataanalysis?lang=en)<br>
 [Big Data F1](https://www.bigdataf1.com)
