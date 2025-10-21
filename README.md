@@ -10,8 +10,17 @@ I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoo
 
 ### Reference Models
 [yngjoel, Australian Race Prediction](https://github.com/yngjoel/F1_Australian_Prediction_Model/tree/main) <br>
+
 [mar-antaya Qualifying Prediction](https://github.com/mar-antaya/2025_f1_predictions)
+
 [SaiUbc Qualifying time](https://medium.com/@SaiUbc/whos-fastest-predicting-f1-qualifying-lap-times-with-machine-learning-ebf42d473115)
+
+[Guang Yang Qualifying time](https://aws.amazon.com/blogs/machine-learning/predicting-qualification-ranking-based-on-practice-session-performance-for-formula-1-grand-prix/)
+
+[Spencer Staub race prediction](https://github.com/SpencerStaub/Capstone) [Presentation](https://datasci.columbian.gwu.edu/sites/g/files/zaxdzs4746/files/2023-02/f1-final-presentation.pdf)
+
+[nooruq Track Clustering](https://github.com/nooruq101/INST-414-Module-4) [article](https://medium.com/inst414-data-science-tech/clustering-formula-one-tracks-based-on-structure-and-geography-2cc4c6644f7a)
+
 ### Reference Analysis
 [F1 Data Analysis](https://x.com/fdataanalysis?lang=en)<br>
 [Big Data F1](https://www.bigdataf1.com)
@@ -19,7 +28,7 @@ I completed 80 courses on [DataCamp](https://www.datacamp.com/portfolio/JamieWoo
 ## Data Used
 ### Historic Data
 [Ergast](https://api.jolpi.ca/ergast/)
-
+[Circuit Data](https://github.com/toUpperCase78/formula1-datasets/blob/master/Formula1_2023season_calendar.csv)
 ### Telemetry
 [FastF1](https://docs.fastf1.dev) gives Free Practice and Qualifying data as well as speed through at the lap. Other data provided by the website include Track and Air Temperature at 1 minute intervals throughout each session.
 
