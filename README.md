@@ -46,7 +46,11 @@ I used the FP3 and FP2 Deltas as they are the most recent points of data from th
 I have used both the previous race's qualifying data aswell as the mean from the last 5 races. This is because i want to give more emphasis to recent qualifying performances over ones more races further in the past while still nullifying outlier performances in the last race. 
 
 #### Team Data
-I have used the team data to help neutralize the effects of crashes in FP3 which would remove data or have unrepresentitave data from sessions by averageing both drivers in a team
+I have used the team data to help neutralize the effects of crashes in FP3 which would remove data or have unrepresentitave data from sessions by averaging both drivers in a team
+
+### How my model works
+I used python and the built in library sklearn to create a lasso regression model, this adds an L1 penalty to the model allowing some coefficients to drop value to 0. I did this because my model has several similar features and multicollinearity occurs when the correlation is too high. To transform the data, I changed datetimes into deltas from first place in that session. 
+
 ### Ideas
 [Ensemble Learning](https://www.geeksforgeeks.org/machine-learning/a-comprehensive-guide-to-ensemble-learning) - Combining the results from multiple models in a Classifier, ie. Voting Classifier <br>
 <br>
